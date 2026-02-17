@@ -25,13 +25,13 @@ from a2a.server.apps import A2AStarletteApplication
 from a2a.server.request_handlers import DefaultRequestHandler
 
 from executer import HelloExecutor
-from taskStore import LocalTaskStore
+from taskStore import GLOBAL_TASK_STORE
 from middleware import TrafficLoggerMiddleware
 
 
 request_handler = DefaultRequestHandler(
     agent_executor=HelloExecutor(),
-    task_store=LocalTaskStore() 
+    task_store=GLOBAL_TASK_STORE 
 )
 
 # Create the application
